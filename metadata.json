@@ -1,0 +1,8 @@
+{
+  "name": "TrustDate - Safety-First Dating",
+  "description": "A high-integrity dating platform featuring upfront AI-powered background checks and a limited-interaction model to ensure meaningful connections. Enjoy 3 texts and 3 calls per match, or unlock unlimited access for just $1.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

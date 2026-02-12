@@ -1,0 +1,30 @@
+
+{
+  "short_name": "TrustDate",
+  "name": "TrustDate - Safety-First Dating",
+  "icons": [
+    {
+      "src": "https://picsum.photos/seed/trustdate/192/192",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "https://picsum.photos/seed/trustdate/512/512",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "https://picsum.photos/seed/trustdate/512/512",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+  ],
+  "start_url": ".",
+  "background_color": "#0f172a",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#4f46e5",
+  "description": "Upfront background checks and high-integrity connections.",
+  "orientation": "portrait"
+}

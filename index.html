@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>TrustDate</title>
+    
+    <!-- PWA / Android Mobile Meta Tags -->
+    <meta name="theme-color" content="#4f46e5" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" type="image/png" href="https://picsum.photos/seed/trustdate/192/192" />
+    <link rel="apple-touch-icon" href="https://picsum.photos/seed/trustdate/180/180" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            animation: {
+              'scale-in': 'scale-in 0.2s ease-out',
+            },
+            keyframes: {
+              'scale-in': {
+                '0%': { transform: 'scale(0.95)', opacity: '0' },
+                '100%': { transform: 'scale(1)', opacity: '1' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* Prevent pull-to-refresh and "rubber-banding" on Android/iOS */
+      html, body {
+        overscroll-behavior-y: contain;
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        overflow: hidden;
+      }
+      #root {
+        height: 100%;
+        overflow: hidden;
+      }
+      /* Remove blue highlight on tap for Android */
+      * {
+        -webkit-tap-highlight-color: transparent;
+      }
+      /* Optimize for touch scrolling */
+      .overflow-y-auto {
+        -webkit-overflow-scrolling: touch;
+      }
+    </style>
+    <script type="importmap">
+    {
+      "imports": {
+        "@google/genai": "https://esm.sh/@google/genai@^1.41.0",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+        "react/": "https://esm.sh/react@^19.2.4/",
+        "react": "https://esm.sh/react@^19.2.4"
+      }
+    }
+    </script>
+  </head>
+  <body class="bg-slate-50 text-slate-900 transition-colors duration-500">
+    <div id="root"></div>
+    <script>
+      // Service Worker Registration for Android PWA support
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('sw.js').catch(err => {
+            console.log('SW registration failed: ', err);
+          });
+        });
+      }
+    </script>
+  </body>
+</html>
